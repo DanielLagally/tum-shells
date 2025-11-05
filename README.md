@@ -9,8 +9,11 @@ I highly recommend using these flakes with [nix-direnv](https://github.com/nix-c
 #### As a template
 `nix flake init -t github:DanielLagally/tum-shells#<name>`
 
-You probably want to enable the direnv with:
+You probably want to enable the direnv with
 `direnv allow`
+
+Or just run it manually with
+`nix develop`
 
 #### As a devShell
 With direnv:
@@ -20,6 +23,15 @@ Without direnv:
 `nix develop github:DanielLagally/tum-shells#<name>`
 
 Alternatively, you may clone the repository and instead use the path to your local copy
+
+### Problems
+Nix may throw:
+`error: path '«github:DanielLagally/tum-shells/<commit-hash>»/flake.nix' does not exist`
+
+In this case simply run
+`nix flake update --flake github:DanielLagally/tum-shells`
+
+This may also help if nix is not detecting that there's a newer commit of the repository
 
 ### TODO
 - Move flakes from previous semesters / other classes
