@@ -48,8 +48,10 @@
         unstable.ruff
 
         # python packages
-        pip
+        pip # in case you need to install other dependencies
+        # debugpy
         requests
+        flask
       ];
     };
     defaultTemplate = {
