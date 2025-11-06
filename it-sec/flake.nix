@@ -54,9 +54,5 @@
         flask
       ];
     };
-    defaultTemplate = {
-      path = ./.;
-      description = "it-sec template";
-    };
   };
 }

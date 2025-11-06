@@ -38,9 +38,5 @@
 
       hardeningDisable = [ "all" ]; # allows compiling with -O0 flag for debugging
     };
-    defaultTemplate = {
-      path = ./.;
-      description = "gbs template";
-    };
   };
 }
