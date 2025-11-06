@@ -7,6 +7,7 @@
     gbs = { url = "./gbs"; };
     it-sec = { url = "./it-sec"; };
     fpv = { url = "./fpv"; };
+    eist = { url = "./eist"; };
   };
 
   outputs = { self, flake-utils, ... } @ inputs :
@@ -16,6 +17,7 @@
       gbs = inputs.gbs;
       it-sec = inputs.it-sec;
       fpv = inputs.fpv;
+      eist = inputs.eist;
     };
 
     build_templates = builtins.mapAttrs (name: value: {
