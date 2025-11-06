@@ -24,7 +24,7 @@
          
         # python
         python # I used IntelliJ to edit python, you may add another editor / tools as needed
-        python.pip # use to install needed dependencies
+        python.pkgs.pip # use to install needed dependencies
 
         # c
         unstable.gnumake
