@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs_unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs_stable.url = "github:nixos/nixpkgs?ref=nixos-24.11";    
+    nixpkgs_stable.url = "github:nixos/nixpkgs?ref=nixos-25.05";    
   };
 
   outputs = { self, nixpkgs_stable, nixpkgs_unstable, ... } @ inputs:
@@ -19,12 +19,15 @@
       nativeBuildInputs = [
         # java
         unstable.jetbrains.idea-ultimate
-        (unstable.jdk17.override {enableJavaFX = true;})
+        unstable.jdk17
+        # (unstable.jdk17.override {enableJavaFX = true;})
+        # as of right now, JavaFX uses gradle_7 which has been marked as insecure. Patching this would probably be a larger undertaking, so if you really need JavaFX, you may uncomment the override and run the devShell in impure mode. Hopefully this will be fixed upstream soon
         unstable.gradle
          
         # python
         python # I used IntelliJ to edit python, you may add another editor / tools as needed
         python.pkgs.pip # use to install needed dependencies
+        python.pkgs.venvShellHook
 
         # c
         unstable.gnumake
