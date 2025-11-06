@@ -11,12 +11,7 @@
   let
     system = builtins.currentSystem or "x86_64-linux";
     unstable = import nixpkgs_unstable { inherit system; config.allowUnfree = true; };
-    unstableWithCuda = import nixpkgs_unstable { inherit system; config.allowUnfree = true; config.cudaSupport = true; };
     stable = import nixpkgs_stable { inherit system; config.allowUnfree = true; };
-    
-    stdenv = unstable.gccStdenv;
-    riscv_env = unstable.pkgsCross.riscv64;
-    llvm_env = unstable.llvmPackages_20.stdenv;
 
     python = unstable.python3;
   in
