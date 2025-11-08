@@ -9,16 +9,17 @@
   outputs = { self, nixpkgs_stable, nixpkgs_unstable, ... } @ inputs:
   let
     system = builtins.currentSystem or "x86_64-linux";
-    unstable = import nixpkgs_unstable { inherit system; config.allowUnfree = true; };
-    unstableWithCuda = import nixpkgs_unstable { inherit system; config.allowUnfree = true; config.cudaSupport = true; };
-    stable = import nixpkgs_stable { inherit system; config.allowUnfree = true; };
-    stdenv = unstable.gccStdenv;
-    riscv_env = unstable.pkgsCross.riscv64;
-    llvm_env = unstable.llvmPackages_20.stdenv;
+    unstable = import nixpkgs_unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in
   {
-    devShells.${system}.default = riscv_env.mkShell {
-      nativeBuildInputs = [
+    devShells.${system}.default = unstable.mkShell {
+     nativeBuildInputs = [
+        unstable.pkgsCross.riscv64.gcc
+        unstable.pkgsCross.riscv64.binutils
+
         unstable.gcc
         unstable.binutils
         unstable.gnumake
