@@ -1,4 +1,5 @@
 # I've retroactively added this flake, so it's not thoroughly or actively tested
+# NOT USING DIRENV BREAKS THE INTELLIJ INTERNAL SHELL, HIGHLY RECOMMEND USING DIRENV
 {
   description = "eist flake";
 
