@@ -2,17 +2,14 @@
   description = "Templates and devShells for courses at TUM";
 
   inputs = {
-    flake-utils.url =  "github:numtide/flake-utils"; # TODO
-
     gbs = { url = "./gbs"; };
     it-sec = { url = "./it-sec"; };
     fpv = { url = "./fpv"; };
     eist = { url = "./eist"; };
   };
 
-  outputs = { self, flake-utils, ... } @ inputs :
+  outputs = { self, ... } @ inputs :
   let
-    system = "x86_64-linux"; # don't fixiate this
     courses = {
       gbs = inputs.gbs;
       it-sec = inputs.it-sec;
@@ -27,8 +24,18 @@
     });
     templates = build_templates courses;
 
-    build_devShells = courses: {${system} = builtins.mapAttrs (name: value: courses.${name}.devShells.x86_64-linux.default) courses;};
-    devShells = build_devShells courses;
+    # TODO seriously clean this up
+    mapToShells = builtins.mapAttrs (name: value: value.devShells); 
+    mapShellToName = (shellName: shells: builtins.mapAttrs (name: value: { ${shellName} = value.default;}) shells);
+    mapShellsToNames = builtins.mapAttrs (name: value: mapShellToName name value);
+    mappedShells = mapShellsToNames shells;
+    dissolveLists = builtins.mapAttrs (name: value: (builtins.zipAttrsWith (name2: values2: builtins.head values2) value)); 
+
+    shells = mapToShells courses;
+    shellList = builtins.attrValues mappedShells;
+    zippedShells = builtins.zipAttrsWith (name: values: values) shellList;
+
+    devShells = dissolveLists zippedShells;
   in
     {
       inherit templates;
