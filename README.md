@@ -14,7 +14,7 @@ When using the recommended approach you will benefit in the following ways:
 - learn some nix along the way 
 
 ### Installing Nix
-You don't need to change your OS to try [Nix](https://github.com/NixOS/nix)! You can install [NixOS](https://nixos.org/download/#nixos-iso), but Nix also works on generic [Linux](https://nixos.org/download/#nix-install-linux "linux installation guide") and [MacOS](https://nixos.org/download/#nix-install-macos "macos installation guide") as well as [WSL](https://nixos.org/download/#nix-install-windows "wsl installation guide") and [Docker](https://nixos.org/download/#nix-install-docker "docker installation guide"). (This repo is not yet compatible with MacOS, though. soon)
+You don't need to change your OS to try [Nix](https://github.com/NixOS/nix)! You can install [NixOS](https://nixos.org/download/#nixos-iso), but Nix also works on generic [Linux](https://nixos.org/download/#nix-install-linux "linux installation guide") and [MacOS](https://nixos.org/download/#nix-install-macos "macos installation guide") as well as [WSL](https://nixos.org/download/#nix-install-windows "wsl installation guide") and [Docker](https://nixos.org/download/#nix-install-docker "docker installation guide").
 
 As of writing, this repository uses experimental nix features called Flakes and nix-command. You must enable these features in order to use this repository. See [here](https://nixos.wiki/wiki/Flakes) how do that. Don't forget to apply the changes.
 
