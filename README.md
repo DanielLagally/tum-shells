@@ -27,17 +27,17 @@ Nix is compatible with virtually all Linux distributions, as well as MacOS and W
 
   #### Determinate Nix Installer
     
-  The [Determinate Nix Installer](https://github.com/DeterminateSystems/Nix-installer?tab=readme-ov-file#determinate-Nix-installer) makes it easy to install and uninstall Nix and is compatible with Linux, MacOS and WSL. 
+  The [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer?tab=readme-ov-file#determinate-nix-installer) makes it easy to install and uninstall Nix and is compatible with Linux, MacOS and WSL. 
   
-  It also enables Flakes and Nix-command by default, allowing you to skip step 2.
+  It also enables Flakes and nix-command by default, allowing you to skip step 2.
   
-  - Installing determinate Nix
+  - Installing Determinate Nix
   
     ```bash
-    curl -fsSL https://install.determinate.systems/Nix | sh -s -- install --determinate
+    curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determinate
     ```
     
-  - You can also use it to install regular Nix (flakes and Nix-command not enabled)
+  - You can also use it to install regular Nix (flakes and nix-command not enabled)
   
     ```bash
     curl -fsSL https://install.determinate.systems/nix | sh -s -- install
@@ -52,11 +52,11 @@ Nix is compatible with virtually all Linux distributions, as well as MacOS and W
     
   You may also opt for the regular Nix installer, in which case you will find the install instructions on the Nix homepage.
 
-  - [Linux](https://Nixos.org/download/#Nix-install-linux)
-  - [MacOS](https://Nixos.org/download/#Nix-install-macos)
-  - [WSL](https://Nixos.org/download/#Nix-install-windows)
+  - [Linux](https://nixos.org/download/#nix-install-linux)
+  - [MacOS](https://nixos.org/download/#nix-install-macos)
+  - [WSL](https://nixos.org/download/#nix-install-windows)
 
-  Note that determinate Nix is supposedly more resilient to MacOS updates.
+  Note that Determinate Nix is supposedly more resilient to MacOS updates.
     
   </details>
   
@@ -69,17 +69,17 @@ Nix is compatible with virtually all Linux distributions, as well as MacOS and W
 
   I personally use NixOS and while I do recommend it highly, it is a much larger commitment than simply installing the package manager. Many things that work on generic Linux systems do not work on NixOS, many things need tinkering and the learning curve is steep.
 
-  You can find an ISO [here](https://Nixos.org/download/#Nixos-iso)
+  You can find an ISO [here](https://nixos.org/download/#nixos-iso)
   
   </details>
 
 ### 2. Enabling Flakes and Nix-command
 
-As of writing, this repository requires experimental Nix features called Flakes and nix-command. You must enable these features in order to use this repository. See [here](https://Nixos.wiki/wiki/Flakes) how do that (or use determinate Nix). Don't forget to apply the changes.
+As of writing, this repository requires experimental Nix features called Flakes and nix-command. You must enable these features in order to use this repository. See [here](https://Nixos.wiki/wiki/Flakes) how do that (or use Determinate Nix). Don't forget to apply the changes.
 
 ### 3. Installing and enabling direnv and nix-direnv (Optional, but highly recommended)
 
-  You can technically use direnv without nix-direnv (it may already be pre-installed on your distribution also), but I still recommend nix-direnv. See [here](https://github.com/Nix-community/nix-direnv/tree/master?tab=readme-ov-file#nix-direnv) for its benefits.
+  You can technically use direnv without nix-direnv, but I still recommend nix-direnv. See [here](https://github.com/Nix-community/nix-direnv/tree/master?tab=readme-ov-file#nix-direnv) for its benefits.
 
   <details>
     <summary> Nix profile (recommended, easiest) </summary>
@@ -132,7 +132,7 @@ You can either clone this repository or point to it directly in the following co
 
 #### Local copy (Recommended)
 
-You can simply pull the repository to get a local copy.
+You can simply clone the repository to get a local copy.
 
 This has the benefit of offering you both flexibility as well as the ability to update the repo by pulling changes.
 
