@@ -28,10 +28,10 @@
     mapToShells = builtins.mapAttrs (name: value: value.devShells); 
     mapShellToName = (shellName: shells: builtins.mapAttrs (name: value: { ${shellName} = value.default;}) shells);
     mapShellsToNames = builtins.mapAttrs (name: value: mapShellToName name value);
-    mappedShells = mapShellsToNames shells;
     dissolveLists = builtins.mapAttrs (name: value: (builtins.zipAttrsWith (name2: values2: builtins.head values2) value)); 
 
     shells = mapToShells courses;
+    mappedShells = mapShellsToNames shells;
     shellList = builtins.attrValues mappedShells;
     zippedShells = builtins.zipAttrsWith (name: values: values) shellList;
 
