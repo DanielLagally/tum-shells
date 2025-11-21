@@ -196,7 +196,7 @@ Nix keeps a local reference to the commit of this repo you last used. This means
   ```
 
 Otherwise you may get errors similar to this:
-`error: path '«github:DanielLagally/tum-shells/<commit-hash>»/flake.Nix' does not exist`
+`error: path '«github:DanielLagally/tum-shells/<commit-hash>»/flake.nix' does not exist`
 
 ### TODO
 - Move flakes from previous semesters / other classes
