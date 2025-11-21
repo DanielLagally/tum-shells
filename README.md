@@ -89,7 +89,7 @@ As of writing, this repository requires experimental Nix features called Flakes 
   Despite not being declarative and therefore kind of antithetical to the whole point of Nix, I still recommend using Nix profile here because it is the most straight-forward way to install a package.
   
   ```bash
-    nix profile add direnv nix-direnv
+    nix profile add nixpkgs#direnv nixpkgs#nix-direnv
   ```
 
   #### 3.2 Enabling direnv
