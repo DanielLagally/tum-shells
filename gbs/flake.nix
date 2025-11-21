@@ -21,6 +21,7 @@
         devShells.default = unstable.mkShell {
          nativeBuildInputs = filterBrokenPackages [
           unstable.pkgsCross.riscv64.gcc
+          unstable.pkgsCross.riscv64.gdb
           unstable.pkgsCross.riscv64.binutils
 
           unstable.gcc
