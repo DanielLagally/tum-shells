@@ -47,6 +47,8 @@
             # python packages
             pip # in case you need to install other dependencies
             # debugpy
+            bcrypt
+            pycrypto
             requests
             flask
           ];
