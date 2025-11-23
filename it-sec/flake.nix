@@ -18,7 +18,7 @@
         python = unstable.python3;
       in
       {
-        devShells.default = unstable.mkShellNoCC {
+        devShells.default = unstable.mkShell {
           venvDir = ".venv";
 
           postShellHook = ''
@@ -43,6 +43,9 @@
             # linting and type checking
             unstable.basedpyright
             unstable.ruff
+
+            # c++ libs
+            unstable.boost
 
             # python packages
             pip # in case you need to install other dependencies
